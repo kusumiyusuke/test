@@ -1,0 +1,94 @@
+[
+    {
+        "id": "1725df195f.d64906",
+        "type": "inject",
+        "z": "17f539b658.a3efc8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 100,
+        "y": 740,
+        "wires": [
+            [
+                "17e585e2e9.c8b8e"
+            ]
+        ]
+    },
+    {
+        "id": "17f2e142bf.bbf1b",
+        "type": "talk",
+        "z": "17f539b658.a3efc8",
+        "word": "",
+        "subtitle": "",
+        "edit": false,
+        "expression": "normal",
+        "motioneditor": "\nEND",
+        "name": "",
+        "motionmode": "editor",
+        "target": "face",
+        "asset": "face_front",
+        "bargein": "off",
+        "version": 2,
+        "x": 790,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17595b7dda.d3ef64",
+        "type": "function",
+        "z": "17f539b658.a3efc8",
+        "name": "文字列検索",
+        "edit": "",
+        "func": "var length = msg.data.length;\nmsg.len = length;\nmsg.index = Math.floor(Math.random() * length);\nmsg.word = msg.data[msg.index][0];\nmsg.motion = \"face_up\";\nreturn msg;",
+        "outputs": 1,
+        "dummy": "1",
+        "noerr": 0,
+        "x": 530,
+        "y": 740,
+        "wires": [
+            [
+                "17f2e142bf.bbf1b",
+                "1764691797.8ee468"
+            ]
+        ]
+    },
+    {
+        "id": "1764691797.8ee468",
+        "type": "debug",
+        "z": "17f539b658.a3efc8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 620,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "17e585e2e9.c8b8e",
+        "type": "function",
+        "z": "17f539b658.a3efc8",
+        "name": "文字列キャッシュ",
+        "edit": "",
+        "func": "msg.data = [\n    [\"ねぇ、知ってた？黒っぽいお蕎麦と白っぽいお蕎麦があるけど、黒っぽいお蕎麦の方が血管が老化するのを防ぐ効果のあるルチンを多く含んでいるんだって。お蕎麦をよく食べている人は血管年齢が若い人が多いみたい。\",1],\n    [\"ねえ、知ってた？お蕎麦には血管の老化を防ぐルチンが入っているんだけど、かき揚げと一緒に食べるとルチンの吸収が良くなるんだって。かき揚げそば美味しいし、体に良いんだね。\",1],\n    [\"ねぇ、知ってた？おもちはお米より太りにくいけど、腹持ちが良いんだって。おもちときな粉を一緒に食べると血糖値の上昇を抑えて、肥満を予防してくれるんだって。でも食べすぎはダメみたいよ。\",1],\n    [\"ねぇ、知ってた？おもちとチーズを一緒に食べるとタンパク質とカルシウムが骨を丈夫にしてくれるんだって。海苔を巻いて一緒に食べるとさらに効果的みたい。\",1],\n    [\"ねぇ、知ってた？お蕎麦の乾麺をゆでる前に、10分ぐらい水につけてからゆでると、生のお蕎麦みたいにおいしくなるんだって。今度試してみて。\",1]\n]\nreturn msg;",
+        "outputs": 1,
+        "dummy": "1",
+        "noerr": 0,
+        "x": 290,
+        "y": 740,
+        "wires": [
+            [
+                "17595b7dda.d3ef64"
+            ]
+        ]
+    }
+]
