@@ -1,5 +1,12 @@
 [
     {
+        "id": "2679b217e8c.ef0a5",
+        "type": "tab",
+        "label": "京葉ガスstep2",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "2679c31ed00.128b8",
         "type": "touch_trigger",
         "z": "2679b217e8c.ef0a5",
@@ -4849,7 +4856,9 @@
         "x": 690,
         "y": 2660,
         "wires": [
-            [],
+            [
+                "2673d3470b8.4ba9e"
+            ],
             [
                 "267c2f7e141.dbfbd"
             ],
@@ -4884,8 +4893,7 @@
         "wires": [
             [
                 "267736f97a5.805918",
-                "2679fbf7615.a03d88",
-                "2673d3470b8.4ba9e"
+                "2679fbf7615.a03d88"
             ]
         ]
     },
@@ -5027,7 +5035,7 @@
         "z": "2679b217e8c.ef0a5",
         "name": "終了処理",
         "edit": "",
-        "func": "msg.count++;\n\nif(msg.count < msg.len){\n    // 次のトークに遷移\n    msg.path = \"\";\n    msg.word = \"\";\n    msg.expression = \"\";\n    msg.delay = \"\";\n    return [msg,null];\n}\nelse{\n    // 終了\n    msg = [];\n    return [null,msg];\n}",
+        "func": "msg.count++;\n\nif(msg.count < msg.len){\n    // 次のトークに遷移\n    msg.path = \"\";\n    msg.word = \"\";\n    msg.expression = \"\";\n    msg.delay = \"\";\n    return [msg,null];\n}\nelse{\n    // 終了\n    msg = {};\n    return [null,msg];\n}",
         "outputs": 2,
         "dummy": "1",
         "noerr": 0,
@@ -5039,7 +5047,8 @@
                 "267c03b57d2.5342b8"
             ],
             [
-                "267c03b57d2.5342b8"
+                "267c03b57d2.5342b8",
+                "267c2f7e141.dbfbd"
             ]
         ]
     },
@@ -5463,7 +5472,7 @@
         "z": "2679b217e8c.ef0a5",
         "name": "終了処理",
         "edit": "",
-        "func": "msg.count++;\n\nif(msg.count < msg.len){\n    // 次のトークに遷移\n    msg.path = \"\";\n    msg.word = \"\";\n    msg.expression = \"\";\n    msg.delay = \"\";\n    return [msg,null];\n}\nelse{\n    // 終了\n    msg = [];\n    return [null,msg];\n}",
+        "func": "msg.count++;\n\nif(msg.count < msg.len){\n    // 次のトークに遷移\n    msg.path = \"\";\n    msg.word = \"\";\n    msg.expression = \"\";\n    msg.delay = \"\";\n    return [msg,null];\n}\nelse{\n    // 終了\n    msg = {};\n    return [null,msg];\n}",
         "outputs": 2,
         "dummy": "1",
         "noerr": 0,
@@ -5475,7 +5484,8 @@
                 "267a76312f9.bbbe9"
             ],
             [
-                "267a76312f9.bbbe9"
+                "267a76312f9.bbbe9",
+                "2673d3470b8.4ba9e"
             ]
         ]
     },
